@@ -1,0 +1,22 @@
+<% include header %>
+
+<div class="login-container">
+
+<form action="<%= loginPageURL %>" method="POST" >
+	<p>
+		<label for="username"><b>Felhasználó név:</b></label>
+		<input type="text" name="username" id="username" value="" />
+	</p>
+	<p>
+		<label for="password"><b>Jelszó:</b></label>
+		<input type="password" name="password" id="password" value="" />
+	</p>
+	<p>
+		<input type="hidden" name="returnTo" value="<%= returnTo %>">
+		<input type="submit" value="Bejelentkezés" />
+	</p>
+</form>
+
+</div>
+
+<% include footer %>

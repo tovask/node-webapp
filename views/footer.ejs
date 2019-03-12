@@ -1,0 +1,15 @@
+
+
+
+</div>
+<div class="panel-right" >
+	<% if (loggedIn) { %>
+		<a href="<%= logoutPageURL %>" class="login-logout-link" >Kijelentkezés</a>
+	<% } else if (fullPath != loginPageURL) { %>
+		<a href="<%= loginPageURL %>" class="login-logout-link" >Bejelentkezés</a>
+	<% } %>
+</div>
+
+
+</body>
+</html>

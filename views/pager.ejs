@@ -1,0 +1,15 @@
+
+<div class="pager-container" >
+	<% allPageCount = Math.ceil(count/limit) || 1; %>
+	<a <%- offset>0 ? ('href="?'+(filterAndSortQuery?(filterAndSortQuery+'&amp;'):'')+'offset=0"') : ('style="visibility:hidden;"') %> >&lt;&lt;-</a>
+	&nbsp;&nbsp;
+	<a <%- offset>0 ? ('href="?'+(filterAndSortQuery?(filterAndSortQuery+'&amp;'):'')+'offset='+Math.max(0,offset-limit)+'"') : ('style="visibility:hidden;"') %> >&lt;-</a>
+	&nbsp;&nbsp;
+	<span style="" title="<%= currPageNum %>. oldal, összesen <%= allPageCount %> oldal" class="pager-page-numbers" ><%= currPageNum %> / <%= allPageCount %></span>
+	&nbsp;&nbsp;
+	<a <%- offset+limit<count ? ('href="?'+(filterAndSortQuery?(filterAndSortQuery+'&amp;'):'')+'offset='+Math.min(count-1,offset+limit)+'"') : ('style="visibility:hidden;"') %> >-&gt;</a>
+	&nbsp;&nbsp;
+	<a <%- offset+limit<count ? ('href="?'+(filterAndSortQuery?(filterAndSortQuery+'&amp;'):'')+'offset='+((allPageCount-1)*limit)+'"') : ('style="visibility:hidden;"') %> >-&gt;&gt;</a>
+	&nbsp;&nbsp;
+	<span style="" title="Összesen" class="pager-item-count" >&sum; <%= count %></span>
+</div>

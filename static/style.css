@@ -1,0 +1,163 @@
+/*
+
+*/
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+/*	 border: 1px solid black; */
+}
+
+html, body {
+	width: 100%;
+	min-width: 750px;
+	height: 100%;
+}
+
+
+.panel-left, .panel-center, .panel-right {
+	float: left;
+	height: 100%;
+}
+.panel-left {
+	width: 20%;
+}
+.panel-center {
+	width: 60%;
+}
+.panel-right {
+	width: 20%;
+}
+.login-logout-link {
+	display: block;
+	padding: 20px 0 0 0;
+	text-align: center;
+}
+
+.login-container {
+	padding-top: 150px;
+}
+.login-container > form > p {
+	padding: 10px;
+	text-align: center;
+}
+.login-container > form > p > label {
+	display: inline-block;
+	min-width: 200px;
+	text-align: right;
+}
+
+h1 {
+    padding: 10px;
+    text-align: center;
+}
+
+.filter-container {
+    padding: 10px;
+}
+.filter-container > h2 {
+    padding: 100px 0 20px 0;
+}
+.filter-container > form > fieldset {
+	margin: 10px 0;
+    padding: 10px;
+	max-height: 150px;
+	overflow: auto;
+}
+.filter-container > form > fieldset > legend {
+    padding: 0px 5px;
+}
+.filter-container > form > fieldset > div {
+    padding: 0 10px 0 15px;
+}
+.filter-container > form > fieldset li {
+    list-style-type: none;
+}
+.filter-container > form > fieldset li > label {
+    padding: 0 8px;
+}
+.filter-container > form > fieldset li > span {
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	vertical-align: middle;
+	background: url("http://www.thecssninja.com/demo/css_tree/toggle-small.png") no-repeat;
+    cursor: pointer;
+}
+.filter-container > form > fieldset ol {
+    padding-left: 30px;
+}
+.filter-container > form > input[type='submit'] {
+    margin: 15px 10%;
+    width: 80%;
+}
+
+.list-header, .list-container > a {
+	display: block;
+	padding: 15px 0px;
+	border: 3px solid black;
+	border-width: 0px 0px 3px 0px;
+	text-decoration: none;
+}
+.list-header > a > img { /* sorting icons */
+	height: 25px;
+	vertical-align: middle;
+}
+.list-header > a {
+    color: inherit;
+    text-decoration: none;
+    font-weight: bold;
+}
+.list-header > a,
+.list-container > a > span {
+	display: inline-block;
+	width: 20%;
+	height: 25px;
+	line-height: 25px;
+	vertical-align: middle;
+	text-align: center;
+	/* handle too long content: */
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}
+.list-container > a > span > img {
+    max-width: 100%;
+    max-height: 100%;
+    cursor: pointer;
+}
+
+
+.pager-container {
+    padding: 10px;
+}
+.pager-container > a {
+    text-decoration: none;
+}
+.pager-container > .pager-item-count {
+    float: right;
+}
+
+
+.detail-container {
+	
+}
+.detail-container > h3 {
+	padding: 10px;
+	text-align: center;
+}
+.detail-container > div {
+	margin: auto;
+	padding: 5px;
+	width: 80%;
+	overflow: hidden;
+}
+.detail-container > div > span {
+	float: left;
+	width: 50%;
+	padding: 0 3px;
+}
+.detail-container > div > span:first-child {
+	text-align: right;
+}

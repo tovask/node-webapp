@@ -1,0 +1,52 @@
+
+<div class="filter-container" >
+	<h2>Szűrés</h2>
+	<form class="" action="/" method="get" >
+		
+		<!-- <%#- JSON.stringify(allAttributes, null, 4) %> -->
+		
+		<%
+		function renderChilds( allElems, parentElem ){
+			var html = '';
+			html += '<li>';
+			html += '<input type="checkbox" name="filter['+parentElem.mezo+'][]" value="'+parentElem.id+'" id="'+parentElem.mezo+parentElem.id+'" '+((parentElem.mezo in activeFilters && activeFilters[parentElem.mezo].indexOf(parentElem.id+'')!=-1) ? 'checked' : '')+' />';
+			html += '<label for="'+parentElem.mezo+parentElem.id+'" >'+parentElem.nev+'</label>';
+			if (parentElem.childs) { // check if it has childs
+				html += '<span></span>'; // the toggle icon
+				html += '<ol>';
+				parentElem.childs.split(',').forEach(function(childId){
+					html += renderChilds( allElems, allElems[childId] ); // recursion
+				});
+				html += '</ol>';
+			}
+			html += '</li>';
+			return html;
+		}
+		%>
+		
+		<% for ( var attribute in allAttributes ) { %>
+			<fieldset>
+				<legend><%= attribute %>:</legend>
+				<% if (attribute=='aljzat') { %>
+					<% for ( var value_id in allAttributes[attribute] ) { %>
+						<% if (allAttributes[attribute][value_id]['isTopLevel']) { %>
+							<%- renderChilds( allAttributes[attribute], allAttributes[attribute][value_id]  ) %>
+						<% } %>
+					<% } %>
+				<% } else { %>
+					<% for ( var value_id in allAttributes[attribute] ) { %>
+						<div>
+							<input type="checkbox" id="filter[<%= attribute %>][<%= value_id %>]" name="filter[<%= attribute %>][]" value="<%= value_id %>" <%= (attribute in activeFilters && activeFilters[attribute].indexOf(value_id+'')!=-1) ? 'checked' : '' %> >
+							<label for="filter[<%= attribute %>][<%= value_id %>]"><%= allAttributes[attribute][value_id]['nev'] %></label>
+						</div>
+					<% } %>
+				<% } %>
+			</fieldset>
+		<% } %>
+		
+		<input type="submit" value="Szűrők alkalmazása" />
+	</form>
+	<form class="" action="/" method="get" >
+		<input type="submit" value="Szűrők törlése" />
+	</form>
+</div>

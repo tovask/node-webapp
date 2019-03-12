@@ -1,0 +1,35 @@
+<% include header %>
+
+<!-- <%- JSON.stringify(item, null, 4) %> -->
+
+<!-- <%#- JSON.stringify(allAvailableFilters, null, 4) %> -->
+
+<div class="detail-container">
+
+<h1><%= item.nev %></h1>
+
+<h3><%= item.datum %> - <%= item.helyszin %></h3>
+
+<div>
+	<span>Aljzatallapot:</span><span><%= item.aljzatallapot %></span>
+</div>
+<div>
+	<span>Aljzatfeleseg:</span><span><%= item.aljzatfeleseg %></span>
+</div>
+<div>
+	<span>Magassag:</span><span><%= item.magassag %></span>
+</div>
+<!--
+<div>
+	<span>:</span><span><%#= item. %></span>
+</div>
+-->
+
+<a href="/upload/talalat/<%= item.talalat_id %>">Kép feltöltése ehhez a találathoz</a>
+<br><br>
+<a href="/upload/faj/<%= item.faj_id %>">Kép feltöltése ehhez a fajhoz</a>
+
+
+</div>
+
+<% include footer %>

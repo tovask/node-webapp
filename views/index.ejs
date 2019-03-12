@@ -1,0 +1,53 @@
+<% include header %>
+
+
+<h1>GOMBÁK</h1>
+
+<% include pager %>
+
+<div class="list-header" >
+	
+	<% columnName = 'nev'; sortedByThis = (sortField==columnName); %>
+	<a href="?<%- (filterQuery?(filterQuery+'&amp;'):'')+'sortField='+columnName+'&amp;sortOrder='+((sortedByThis && sortOrder=='ASC')?'DESC':'ASC') %>" >
+		Faj
+		<img src="https://png.icons8.com/color/50/000000/sort<%= ((sortedByThis)?(sortOrder=='ASC'?'-down':'-up'):'') %>.png" title="<%= ((sortedByThis && sortOrder=='ASC')?'Csökkenő sorrendbe':'Növekvő sorrendbe') %>" />
+	</a>
+	
+	<% columnName = 'datum'; sortedByThis = (sortField==columnName); %>
+	<a href="?<%- (filterQuery?(filterQuery+'&amp;'):'')+'sortField='+columnName+'&amp;sortOrder='+((sortedByThis && sortOrder=='ASC')?'DESC':'ASC') %>" >
+		Dátum
+		<img src="https://png.icons8.com/color/50/000000/sort<%= ((sortedByThis)?(sortOrder=='ASC'?'-down':'-up'):'') %>.png" title="<%= ((sortedByThis && sortOrder=='ASC')?'Csökkenő sorrendbe':'Növekvő sorrendbe') %>" />
+	</a>
+	
+	<% columnName = 'helyszin'; sortedByThis = (sortField==columnName); %>
+	<a href="?<%- (filterQuery?(filterQuery+'&amp;'):'')+'sortField='+columnName+'&amp;sortOrder='+((sortedByThis && sortOrder=='ASC')?'DESC':'ASC') %>" >
+		Helyszín
+		<img src="https://png.icons8.com/color/50/000000/sort<%= ((sortedByThis)?(sortOrder=='ASC'?'-down':'-up'):'') %>.png" title="<%= ((sortedByThis && sortOrder=='ASC')?'Csökkenő sorrendbe':'Növekvő sorrendbe') %>" />
+	</a>
+	
+	<a>
+		Kép
+	</a>
+	
+</div>
+
+<div class="list-container" >
+
+<% items.forEach(function(item) { %>
+	<a <%- (item.id)?('href="/detail/'+item.id+'"'):'' %> >
+		<!--<span> <%#- JSON.stringify(item) %> </span>-->
+		<span title="<%= item.nev %>" > <%= item.nev %> </span>
+		<span> <%= item.datum %> </span>
+		<span> <%= item.helyszin %> </span>
+		<% if (item.file) { %>
+		<span> <img src="images/<%= item.file %>" onclick="window.open('images/<%= item.file %>');return false;" /> </span>
+		<% } %>
+	</a>
+<% }); %>
+
+</div>
+
+<% include pager %>
+
+
+<% include footer %>

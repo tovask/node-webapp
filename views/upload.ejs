@@ -1,0 +1,18 @@
+<% include header %>
+
+
+<!-- <%#- JSON.stringify(allAvailableFilters, null, 4) %> -->
+
+<div class="upload-container">
+
+<h1>Kép feltöltése <%= (whatfor=='faj')?'fajhoz':'találathoz' %></h1>
+
+<form action="<%= fullPath %>" method="post" enctype="multipart/form-data">
+	<input type="file" name="img" multiple />
+	<input type="submit" name="" value="Feltölt" />
+</form>
+
+
+</div>
+
+<% include footer %>
