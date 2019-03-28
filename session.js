@@ -1,4 +1,7 @@
 /*
+Manage authentication.
+
+Read the docs:
 https://github.com/expressjs/session
 https://github.com/chill117/express-mysql-session
 */

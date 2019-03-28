@@ -1,5 +1,8 @@
-
-// pm2 start npm --watch --ignore-watch="static" --name "mynodeproject" -- run start-dev
+/*
+Config file for pm2.
+To start the manager:
+    pm2 start npm --watch --ignore-watch="static" --name "mynodeproject" -- run start-dev
+*/
 
 module.exports = {
   apps : [{

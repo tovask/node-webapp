@@ -13,11 +13,12 @@ module.exports = {
 	},
 	loginPageURL: '/login',
 	logoutPageURL: '/logout' /*,
+	// File upload:
 	uploadPageURL: '/upload',
+	// Google login:
 	google: {
-    	clientID: 'YOUR_CLIENT_ID.apps.googleusercontent.com',
-    	clientSecret: 'YOUR_CLIENT_SECRET',
-    	callbackURL: "https://YOUR_DOMAIN.com/auth/google/callback"
+		clientID: 'YOUR_CLIENT_ID.apps.googleusercontent.com',
+		clientSecret: 'YOUR_CLIENT_SECRET',
+		callbackURL: "https://YOUR_DOMAIN.com/auth/google/callback"
 	}*/
-    
 };

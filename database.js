@@ -1,4 +1,5 @@
 /*
+Read the docs:
 https://github.com/mysqljs/mysql
 */
 

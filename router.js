@@ -1,4 +1,7 @@
 /*
+The router for our app, where the paths handled.
+
+Read the docs:
 http://expressjs.com/en/guide/routing.html
 http://expressjs.com/en/4x/api.html#router
 https://expressjs.com/en/api.html#router
